@@ -25,7 +25,7 @@ void sigint_handler(int sig) {
 void parent_process() {
     sleep(1);
     fflush(stdin);
-    printf("\nEnter your  message to send to the children: ");
+    printf("\nplease enter your  message to send to the children: ");
     char message[500];
     if( fgets(message, sizeof(message), stdin) == NULL){
         printf("\nError reading the  input.");
@@ -42,7 +42,7 @@ void parent_process() {
 
 void child_process(int id) {
     sem_wait(&s);
-    printf("Child %d is reading from pipe\n", id+1);
+    printf("Child %d is reading \n", id+1);
 
     char message[256];
     read(pipe_a[id][0], message, sizeof(message));
