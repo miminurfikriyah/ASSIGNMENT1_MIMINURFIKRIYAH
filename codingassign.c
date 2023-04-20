@@ -15,6 +15,7 @@ sem_t s;
 
 //to print message when the system is interupted (ctrl+c)
 void sigint_handler(int sig) {
+    printf("\There is some interuption. Exiting to the main page. \n");
     printf("\nPlease try again. \n");
     sem_destroy(&s);
     exit(0);
